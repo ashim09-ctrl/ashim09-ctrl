@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chat Interface</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="chat-container">
+    <nav class="chat-navbar">
+      <div class="navbar-content">
+        <span id="user-greeting">Welcome, <span id="username-display">Guest</span>!</span>
+        <div class="call-options">
+          <button id="audio-call-btn" class="icon-btn">
+            <i class="icon-call">📞</i>
+          </button>
+          <button id="video-call-btn" class="icon-btn">
+            <i class="icon-video">📹</i>
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <div class="chat-box" id="chat-box"></div>
+
+    <div class="chat-input">
+      <button class="icon-btn" id="emoji-btn">
+        <i class="icon-emoji">😊</i>
+      </button>
+      <input type="text" class="input-field" id="chat-input" placeholder="Type a message">
+      <button class="icon-btn" id="attachment-btn">
+        <i class="icon-attachment">📎</i>
+      </button>
+      <input type="file" id="file-input" style="display:none;" accept="image/*,video/*,audio/*">
+      <button class="icon-btn" id="voice-record-btn">
+        <i class="icon-voice">🎤</i>
+      </button>
+      <button class="send-btn" id="send-btn">
+        <i class="icon-send">➡️</i>
+      </button>
+    </div>
+
+    <div class="emoji-picker" id="emoji-picker">
+      <!-- Add emojis here -->
+      <div class="emoji-category">
+        <!-- Add emojis here -->
+        <div class="emoji-category">
+            <span class="emoji">😀</span><span class="emoji">😁</span><span class="emoji">😂</span>
+            <span class="emoji">🤣</span><span class="emoji">😃</span><span class="emoji">😄</span>
+            <!-- Add more emojis as needed -->
+            <div class="emoji-category">
+              <span class="emoji">😀</span><span class="emoji">😁</span><span class="emoji">😂</span>
+              <span class="emoji">🤣</span><span class="emoji">😃</span><span class="emoji">😄</span>
+              <span class="emoji">😅</span><span class="emoji">😆</span><span class="emoji">😉</span>
+              <span class="emoji">😊</span><span class="emoji">😋</span><span class="emoji">😎</span>
+              <span class="emoji">😍</span><span class="emoji">😘</span><span class="emoji">😗</span>
+              <span class="emoji">😚</span><span class="emoji">😙</span><span class="emoji">😜</span>
+              <span class="emoji">😝</span><span class="emoji">🤑</span><span class="emoji">🤗</span>
+              <span class="emoji">🤔</span><span class="emoji">🤭</span><span class="emoji">🤫</span>
+              <span class="emoji">🤐</span><span class="emoji">😴</span><span class="emoji">😷</span>
+          </div>
+
+          <!-- Animals & Nature -->
+          <div class="emoji-category">
+              <span class="emoji">🐶</span><span class="emoji">🐱</span><span class="emoji">🐭</span>
+              <span class="emoji">🐹</span><span class="emoji">🐰</span><span class="emoji">🦊</span>
+              <span class="emoji">🐻</span><span class="emoji">🐼</span><span class="emoji">🐨</span>
+              <span class="emoji">🐯</span><span class="emoji">🦁</span><span class="emoji">🐮</span>
+              <span class="emoji">🐷</span><span class="emoji">🐸</span><span class="emoji">🐵</span>
+              <span class="emoji">🦄</span><span class="emoji">🐍</span><span class="emoji">🐢</span>
+          </div>
+
+          <!-- Food & Drink -->
+          <div class="emoji-category">
+              <span class="emoji">🍏</span><span class="emoji">🍎</span><span class="emoji">🍐</span>
+              <span class="emoji">🍊</span><span class="emoji">🍋</span><span class="emoji">🍌</span>
+              <span class="emoji">🍉</span><span class="emoji">🍇</span><span class="emoji">🍓</span>
+              <span class="emoji">🍒</span><span class="emoji">🍑</span><span class="emoji">🍍</span>
+              <span class="emoji">🥭</span><span class="emoji">🍔</span><span class="emoji">🍕</span>
+              <span class="emoji">🍖</span><span class="emoji">🍗</span><span class="emoji">🍟</span>
+              <span class="emoji">🍤</span><span class="emoji">🍱</span><span class="emoji">🍣</span>
+          </div>
+
+          <!-- Travel & Places -->
+          <div class="emoji-category">
+              <span class="emoji">✈</span><span class="emoji">🚗</span><span class="emoji">🚕</span>
+              <span class="emoji">🚙</span><span class="emoji">🚌</span><span class="emoji">🚎</span>
+              <span class="emoji">🏠</span><span class="emoji">🏡</span><span class="emoji">🏢</span>
+              <span class="emoji">🏬</span><span class="emoji">🏰</span><span class="emoji">🏯</span>
+              <span class="emoji">🗽</span><span class="emoji">⛪</span><span class="emoji">🕌</span>
+              <span class="emoji">🕍</span><span class="emoji">🏛</span><span class="emoji">🕋</span>
+          </div>
+
+          <!-- Activity -->
+          <div class="emoji-category">
+              <span class="emoji">⚽</span><span class="emoji">🏀</span><span class="emoji">🏈</span>
+              <span class="emoji">⚾</span><span class="emoji">🎾</span><span class="emoji">🏐</span>
+              <span class="emoji">🎱</span><span class="emoji">🏓</span><span class="emoji">🏸</span>
+              <span class="emoji">🥊</span><span class="emoji">🥋</span><span class="emoji">🎳</span>
+              <span class="emoji">🎮</span><span class="emoji">🎰</span><span class="emoji">🎲</span>
+              <span class="emoji">🎯</span><span class="emoji">🧘</span><span class="emoji">⛷</span>
+              <span class="emoji">🏂</span><span class="emoji">🏄</span><span class="emoji">🚣</span>
+          </div>
+
+          <!-- Symbols -->
+          <div class="emoji-category">
+              <span class="emoji">❤</span><span class="emoji">💛</span><span class="emoji">💙</span>
+              <span class="emoji">💚</span><span class="emoji">🖤</span><span class="emoji">💔</span>
+              <span class="emoji">❣</span><span class="emoji">💖</span><span class="emoji">💘</span>
+              <span class="emoji">💝</span><span class="emoji">💗</span><span class="emoji">💓</span>
+              <span class="emoji">💜</span><span class="emoji">💙</span><span class="emoji">💞</span>
+              <span class="emoji">💤</span><span class="emoji">💢</span><span class="emoji">💥</span>
+              <span class="emoji">🔥</span><span class="emoji">✨</span><span class="emoji">🌟</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fullscreen lightbox -->
+    <div class="lightbox" id="lightbox">
+      <span class="lightbox-close" id="lightbox-close">&times;</span>
+      <img id="lightbox-img" class="lightbox-content">
+      <video id="lightbox-video" class="lightbox-content" controls></video>
+    </div>
+
+    <!-- Video Call UI -->
+    <div id="video-call-ui" class="video-call-ui hidden">
+      <div class="video-container">
+        <video id="local-video" autoplay muted></video>
+        <video id="remote-video" autoplay></video>
+      </div>
+      <button id="end-call-btn">End Call</button>
+    </div>
+
+    <!-- Audio Call UI -->
+    <div id="audio-call-ui" class="audio-call-ui hidden">
+      <div class="audio-container">
+        <p>Audio Call with <span id="call-partner-name">User</span></p>
+      </div>
+      <button id="end-audio-call-btn">End Call</button>
+    </div>
+
+  </div>
+
+  <script src="js/script.js"></script>
+  <script src="js/chat.js"></script>
+  <script src="js/emoji.js"></script>
+  <script src="js/call.js"></script>
+</body>
+</html>
